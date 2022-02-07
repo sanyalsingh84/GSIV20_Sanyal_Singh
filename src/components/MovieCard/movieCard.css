@@ -1,0 +1,33 @@
+.movie-card {
+  overflow: hidden;
+  box-shadow: var(--bs-card);
+  border-radius: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.card-head > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-body {
+  padding: 0.5rem 0.3rem 0 0.3rem;
+}
+
+.card-body-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+
+.card-body-title {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.card-body-rating {
+  color: var(--text-color-light);
+}
