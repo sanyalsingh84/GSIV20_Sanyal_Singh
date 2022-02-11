@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Details />} />
+        <Route path="*" element={<h1>Route Not exist</h1>} />
       </Routes>
     </Router>
   );

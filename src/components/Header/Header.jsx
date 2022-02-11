@@ -1,20 +1,31 @@
 import React from "react";
-import { IoSearchSharp } from "react-icons/io5";
 import { MdHome } from "react-icons/md";
 import "./header.css";
+import SearchBar from "./../SearchBar/SearchBar";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isSearch }) => {
+  const navigate = useNavigate();
   return (
-    <header>
-      <div className="search_wrapper">
-        <label htmlFor="search">
-          {<IoSearchSharp className="icon icon-search" />}
-        </label>
-        <input type="search" name="search" id="search" placeholder="Search" />
-      </div>
-      <MdHome className="icon icon-home" />
+    <header className={isSearch ? "head-list" : ""}>
+      {isSearch ? (
+        <SearchBar />
+      ) : (
+        <div className="detail-title">Movie Details</div>
+      )}
+
+      <MdHome
+        onClick={() => {
+          navigate(-1);
+        }}
+        className="icon icon-home"
+      />
     </header>
   );
+};
+
+Header.defaultProps = {
+  isSearch: true,
 };
 
 export default Header;
